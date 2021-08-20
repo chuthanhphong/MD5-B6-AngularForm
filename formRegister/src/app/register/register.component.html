@@ -1,0 +1,76 @@
+<form [formGroup]="userForm" >
+<table>
+  <tr>
+    <td>
+      <input type="number" formControlName="id" >id
+      <p *ngIf="getId().touched && getId().errors"> Id Tối thiểu là 1</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input type="text" formControlName="email" >Email
+      <p *ngIf="getEmail().touched && getEmail().errors">Email sai định dạng</p>
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input  type="password" formControlName="password">Password
+      <p *ngIf=" getPassword().touched &&getPassword().errors && getPassword().errors">Mật khẩu phải là 8 ký tự trở lên</p>
+
+    </td>
+  </tr>
+  <tr>
+    <td>
+      <input id="comfim" type="password" formControlName="confim"> confimPassword
+      <p *ngIf="getConfim().touched&&userForm.value.password!= userForm.value.confim">Nhập Lại
+        Mật Khẩu không đúng</p>
+    </td>
+      </tr>
+    <td>
+      <input type="text"  formControlName="phone" > Phone
+      <p *ngIf=" getPhone().touched &&getPhone().errors">Số điện thoại nhập sai</p>
+    </td>
+  <tr>
+  </tr>
+  <td>
+    <input type="text"  formControlName="country" > Country
+  </td>
+  <tr>
+  <td><input type="number" formControlName="age">Age</td>
+    <p *ngIf="getAge().touched && getAge().errors">Tuổi phải trên 18</p>
+  </tr>
+  <tr>
+    <button  (click)="create()" value="submit" type="submit">Create</button>
+  </tr>
+</table>
+</form>
+
+<h1>UserList</h1>
+<table style="border: 1px">
+  <div *ngFor="let item of userList">
+  <tr>
+    <td>id</td>
+    <td>{{item.id}}</td>
+  </tr>
+  <tr>
+    <td>email</td>
+    <td>{{item.email}}</td>
+  </tr>
+  <tr>
+    <td>Password</td>
+    <td>{{item.password}}</td>
+  </tr>
+  <tr>
+    <td>Country</td>
+    <td>{{item.country}}</td>
+  </tr>
+  <tr>
+    <td>Phone</td>
+    <td>{{item.phone}}</td>
+  </tr>
+  <tr>
+    <td>Age</td>
+    <td>{{item.age}}</td>
+  </tr>
+  </div>
+</table>
