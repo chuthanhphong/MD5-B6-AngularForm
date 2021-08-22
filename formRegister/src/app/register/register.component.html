@@ -33,7 +33,9 @@
   <tr>
   </tr>
   <td>
-    <input type="text"  formControlName="country" > Country
+    <select type="text"  formControlName="country" >
+      <option *ngFor="let item of countrys" value="{{item}}">{{item}}</option>
+    </select>
   </td>
   <tr>
   <td><input type="number" formControlName="age">Age</td>

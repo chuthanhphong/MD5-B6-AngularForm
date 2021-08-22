@@ -19,6 +19,10 @@ userForm : FormGroup = new FormGroup({
   password:new FormControl('',[Validators.required,Validators.min(8)]),
   confim : new FormControl('',Validators.required)
 })
+countrys  =[
+  'Việt Nam','Trung Quốc','Nhật Bản'
+]
+
 
   constructor() { }
 

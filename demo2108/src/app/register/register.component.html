@@ -1,0 +1,33 @@
+<div>
+  <form  [formGroup]="hiepgaform" (ngSubmit)="save()" >
+    <table>
+      <tr>
+        <td>name</td>
+        <td><input type="text" formControlName="name"></td>
+        <p *ngIf="getName().touched && getName().errors"> Sai Validate</p>
+      </tr>
+      <tr>
+        <td>Password</td>
+        <td><input type="password" formControlName="password">
+        <p *ngIf="getPassword().touched && getPassword().errors"> Mật khẩu nhập phải từ 6 ký tự đổ lên</p>
+        </td>
+      </tr>
+      <tr>
+        <button>Save</button>
+      </tr>
+    </table>
+
+
+
+  </form>
+</div>
+<div>
+  <table>
+  <th>Name</th>
+    <th>Pasword</th>
+    <tr *ngFor="let item of Hiepga">
+      <td >{{item.name}}</td>
+      <td>{{item.password}}</td>
+    </tr>
+  </table>
+</div>
